@@ -44,6 +44,10 @@
 			</div>
 		
 		</fieldset>
+
+		<h4><?php _e('User Information', 'clean-login'); ?></h4>
+
+		<?php echo do_action( 'edit_user_profile', $current_user ); ?>
 		
 		<div>	
 			<input type="submit" value="<?php echo __( 'Update profile', 'clean-login' ); ?>" name="submit">

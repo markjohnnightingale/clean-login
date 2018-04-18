@@ -38,6 +38,12 @@
 					<input class="cleanlogin-field-password" type="password" name="pass2" value="" autocomplete="off" placeholder="<?php echo __( 'Confirm password', 'clean-login' ); ?>">
 				</div>
 			<?php endif; ?>
+			
+			<div class="extra-user-info">
+				<?php echo do_action( 'register_form' ); ?>
+			</div>
+
+			
 
 			<?php /*check if captcha is checked */ if ( get_option( 'cl_antispam' ) == 'on') : ?>
 				<div class="cleanlogin-field">

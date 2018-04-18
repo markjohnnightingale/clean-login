@@ -1,15 +1,15 @@
 <?php
 /**
- * @package Clean_Login
+ * @package MN Clean_Login
  * @version 1.9.3
  */
 /*
-Plugin Name: Clean Login
+Plugin Name: MN Clean Login
 Plugin URI: http://cleanlogin.codection.com
-Description: Responsive Frontend Login and Registration plugin. A plugin for displaying login, register, editor and restore password forms through shortcodes. [clean-login] [clean-login-edit] [clean-login-register] [clean-login-restore]
-Author: codection
+Description: Adaptation on Clean Login plugin by Mark Nightingale
+Author: Mark Nightingale
 Version: 1.9.3
-Author URI: https://codection.com
+Author URI: https://marknightingale.net
 Text Domain: clean-login
 Domain Path: /lang
 */
