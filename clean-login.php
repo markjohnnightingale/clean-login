@@ -290,8 +290,15 @@ function clean_login_load_before_headers() {
 						wp_logout();
 						$url = esc_url( add_query_arg( 'authentication', 'disabled', $url ) );
 					}
-					else 
-						$url = get_option('cl_login_redirect', false) ? esc_url(apply_filters('cl_login_redirect_url', clean_login_get_translated_option_page('cl_login_redirect_url'), $user)): esc_url( add_query_arg( 'authentication', 'success', $url ) );
+					else {
+						// Is there a redirect URL specified ?
+						if (!empty($_POST['redirect'])){
+							$url = $_POST['redirect'];
+						} else {
+
+							$url = get_option('cl_login_redirect', false) ? esc_url(apply_filters('cl_login_redirect_url', clean_login_get_translated_option_page('cl_login_redirect_url'), $user)): esc_url( add_query_arg( 'authentication', 'success', $url ) );
+						}
+					}
 				}
 					
 

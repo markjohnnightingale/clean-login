@@ -21,6 +21,7 @@
 		<fieldset>
 			<input class="cleanlogin-field" type="submit" value="<?php echo __( 'Log in', 'clean-login' ); ?>" name="submit">
 			<input type="hidden" name="action" value="login">
+			<input type="hidden" name="redirect" value="<?php echo isset($_GET['redirect']) ? $_GET['redirect'] : '';?>">
 			
 			<div class="cleanlogin-field cleanlogin-field-remember">
 				<input type="checkbox" name="rememberme" value="forever">
