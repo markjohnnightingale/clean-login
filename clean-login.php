@@ -134,10 +134,10 @@ function clean_login_register_show($atts) {
 			echo "<div class='cleanlogin-notification error'><p>". __( 'Last name is not valid', 'clean-login' ) ."</p></div>";
 		else if ( $_GET['created'] == 'wrongpass' )
 			echo "<div class='cleanlogin-notification error'><p>". __( 'Passwords must be identical and filled', 'clean-login' ) ."</p></div>";
-		else if ( $_GET['created'] == 'emailexists' )
-      echo "<div class='cleanlogin-notification error'><p>". __( 'There is already a user registered with this email. Login with this existing account. If you do not remember your password, you will find a recuperation link at the login form.', 'clean-login' ) ."</p></div>";
 		else if ( $_GET['created'] == 'wrongmail' )
 			echo "<div class='cleanlogin-notification error'><p>". __( 'Email is not valid', 'clean-login' ) ."</p></div>";
+		else if ( $_GET['created'] == 'emailexists' )
+			echo "<div class='cleanlogin-notification error'><p>". __( 'There is already a user registered with this email. Login with this existing account. If you do not remember your password, you will find a recuperation link at the login form.', 'clean-login' ) ."</p></div>";
 		else if ( $_GET['created'] == 'wrongcaptcha' )
 			echo "<div class='cleanlogin-notification error'><p>". __( 'CAPTCHA is not valid, please try again', 'clean-login' ) ."</p></div>";
 		else if ( $_GET['created'] == 'failed' )
@@ -278,11 +278,11 @@ function clean_login_load_before_headers() {
 		if ( $post && strpos($post->post_content, 'clean-login' ) !== false ) {
 
 			// Sets the redirect url to the current page 
-			//$url = clean_login_url_cleaner( wp_get_referer() );
+			$url = clean_login_url_cleaner( wp_get_referer() );
 
 			// LOGIN
 			if ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] == 'login' ) {
-				$url = clean_login_get_translated_option_page( 'cl_login_url','');
+				//$url = clean_login_get_translated_option_page( 'cl_login_url','');
 				
 				$user = wp_signon();
 				if ( is_wp_error( $user ) )
