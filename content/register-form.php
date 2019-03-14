@@ -30,7 +30,7 @@
 			</div>
 
 			<div class="cleanlogin-field">
-				<input class="cleanlogin-field-password" type="password" name="pass1" value="" autocomplete="off" placeholder="<?php echo __( 'New password', 'clean-login' ); ?>">
+				<input class="cleanlogin-field-password" type="password" name="pass1" value="" autocomplete="off" placeholder="<?php echo __( 'Password', 'clean-login' ); ?>">
 			</div>
 
 			<?php /*check if single password is checked */ if ( get_option( 'cl_single_password' ) != 'on' ) : ?>
@@ -90,6 +90,7 @@
 		<div>
 			<input type="submit" value="<?php echo __( 'Register', 'clean-login' ); ?>" name="btn-submit" onclick="this.form.submit(); this.disabled = true;">
 			<input type="hidden" name="action" value="register">
+			<input type="hidden" name="redirect" value="<?php echo isset($_GET['redirect']) ? $_GET['redirect'] : '';?>">
 		</div>
 
 	</form>

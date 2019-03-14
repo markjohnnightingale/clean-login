@@ -361,9 +361,9 @@ function clean_login_load_before_headers() {
 			// REGISTER a new user
 			} else if ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] == 'register' ) {
 
-        // check if captcha is checked
-        $enable_captcha = get_option( 'cl_antispam' ) == 'on' ? true : false;
-        // check if gcaptcha is checked
+				// check if captcha is checked
+				$enable_captcha = get_option( 'cl_antispam' ) == 'on' ? true : false;
+				// check if gcaptcha is checked
 				$enable_gcaptcha = get_option( 'cl_gcaptcha' ) == 'on' ? true : false;
 				// check if standby role is checked
 				$create_standby_role = get_option( 'cl_standby' ) == 'on' ? true : false;
@@ -517,7 +517,11 @@ function clean_login_load_before_headers() {
 				// if automatic login is enabled then log the user in and redirect them, checking if it was successful or not,
 				//  is not compatible with email validation feature. This had no meaning!
 				if($automaticlogin && $successful_registration && !$emailvalidation) {
-					$url = esc_url(clean_login_get_translated_option_page('cl_url_redirect'));
+					if (!empty($_POST['redirect'])) {
+						$url = $_POST['redirect'];
+					} else {
+						$url = esc_url(clean_login_get_translated_option_page('cl_url_redirect'));
+					}
 					wp_signon(array('user_login' => $username, 'user_password' => $pass1), false);
 				}					
 					
