@@ -47,8 +47,8 @@ function clean_login_show($atts) {
 		else if ( $_GET['authentication'] == 'failed-activation' )
 			echo "<div class='cleanlogin-notification error'><p>". __( 'Something went wrong while activating your user', 'clean-login' ) ."</p></div>";
 				else if ( $_GET['authentication'] == 'disabled' )
-			echo "<div class='cleanlogin-notification error'><p>". __( 'Your account is currently disabled', 'clean-login' ) ."</p></div>";
-		else if ( $_GET['authentication'] == 'success-activation' )
+					echo "<div class='cleanlogin-notification error'><p>". __( 'You haven\'t validated your email address. Check your email inbox from a mail from Electeurs en Herbe.<br><strong>Click on the link in the email to activate your account.</strong> and try logging in again.', 'clean-login' ) ."</p></div>";
+				else if ( $_GET['authentication'] == 'success-activation' )
 			echo "<div class='cleanlogin-notification success'><p>". __( 'Successfully activated', 'clean-login' ) ."</p></div>";
 	}
 
@@ -121,13 +121,13 @@ function clean_login_register_show($atts) {
 		if ( $_GET['created'] == 'success' )
 			echo "<div class='cleanlogin-notification success'><p>". __( 'User created', 'clean-login' ) ."</p></div>";
 		else if ( $_GET['created'] == 'success-link' )
-			echo "<div class='cleanlogin-notification success'><p>". __( 'User created', 'clean-login' ) ."<br>". __( 'Please confirm your account, you will receive an email', 'clean-login' ) ."</p></div>";
+			echo "<div class='cleanlogin-notification success'><p>". __( 'User created', 'clean-login' ) ."<br><strong>". __( 'Please confirm your account, you will receive an email', 'clean-login' ) ."</strong></p></div>";
 		else if ( $_GET['created'] == 'created' )
 			echo "<div class='cleanlogin-notification success'><p>". __( 'New user created', 'clean-login' ) ."</p></div>";
 		else if ( $_GET['created'] == 'passcomplex' )
 			echo "<div class='cleanlogin-notification error'><p>". __( 'Passwords must be eight characters including one upper/lowercase letter, one special/symbol character and alphanumeric characters. Passwords should not contain the user\'s username, email, or first/last name.', 'clean-login' ) ."</p></div>";
 		else if ( $_GET['created'] == 'wronguser' )
-			echo "<div class='cleanlogin-notification error'><p>". __( 'Username is not valid', 'clean-login' ) ."</p></div>";
+			echo "<div class='cleanlogin-notification error'><p>". __( 'Username is not valid. Do you already have an account?', 'clean-login' ) ."</p></div>";
 		else if ( $_GET['created'] == 'wrongname' )
 			echo "<div class='cleanlogin-notification error'><p>". __( 'First name is not valid', 'clean-login' ) ."</p></div>";
 		else if ( $_GET['created'] == 'wrongsurname' )
@@ -290,8 +290,10 @@ function clean_login_load_before_headers() {
 				else {
 					// if the user is disabled
 					if( empty($user->roles) ) {
-						wp_logout();
+						$url = clean_login_get_translated_option_page( 'cl_login_url','');
 						$url = esc_url( add_query_arg( 'authentication', 'disabled', $url ) );
+						wp_destroy_current_session();
+            wp_clear_auth_cookie();
 					}
 					else {
 						// Is there a redirect URL specified ?
@@ -304,7 +306,6 @@ function clean_login_load_before_headers() {
 					}
 				}
 					
-
 				wp_safe_redirect( $url );
 
 			// LOGOUT
@@ -448,11 +449,11 @@ function clean_login_load_before_headers() {
 				else if( $nameandsurname && $last_name == '' )
 					$url = esc_url( add_query_arg( 'created', 'wrongsurname', $url ) );
 				// check defaults
-				else if( $username == '' || username_exists( $username ) )
+				else if( $username == '' )
 					$url = esc_url( add_query_arg( 'created', 'wronguser', $url ) );
 				else if( $email == '' || !is_email( $email ) )
 					$url = esc_url( add_query_arg( 'created', 'wrongmail', $url ) );
-				else if ( email_exists( $email ) )
+				else if ( email_exists( $email )|| username_exists( $username )  )
          	$url = esc_url( add_query_arg( 'created', 'emailexists', $url ) );
 				else if ( $pass1 == '' || $pass1 != $pass2)
 					$url = esc_url( add_query_arg( 'created', 'wrongpass', $url ) );
@@ -471,16 +472,17 @@ function clean_login_load_before_headers() {
 							$url_msg = get_permalink();
 							$url_msg = esc_url( add_query_arg( 'activate', $user->ID, $url_msg ) );
 							$url_msg = wp_nonce_url( $url_msg, $user->ID );
-
-							$blog_title = get_bloginfo();
-							$message = sprintf( __( "Use the following link to activate your account: <a href='%s'>activate your account</a>.<br/><br/>%s<br/>", 'clean-login' ), $url_msg, $blog_title );
-
-							$subject = "[$blog_title] " . __( 'Activate your account', 'clean-login' );
-							add_filter( 'wp_mail_content_type', 'clean_login_set_html_content_type' );
-							if( !wp_mail( $email, $subject , $message ) )
+							if (!$emailnotification) {
+								$message = sprintf( __( "Use the following link to activate your account: <a href='%s'>activate your account</a>.<br/><br/>%s<br/>", 'clean-login' ), $url_msg, $blog_title );
+								$blog_title = get_bloginfo();
+								
+								$subject = "[$blog_title] " . __( 'Activate your account', 'clean-login' );
+								add_filter( 'wp_mail_content_type', 'clean_login_set_html_content_type' );
+								if( !wp_mail( $email, $subject , $message ) )
 								$url = esc_url( add_query_arg( 'created', 'failed', $url ) );
-							remove_filter( 'wp_mail_content_type', 'clean_login_set_html_content_type' );
-
+								remove_filter( 'wp_mail_content_type', 'clean_login_set_html_content_type' );
+					
+							}
 							$url = esc_url( add_query_arg( 'created', 'success-link', $url ) );
 						}
 						else if( $create_customrole ){
@@ -516,6 +518,11 @@ function clean_login_load_before_headers() {
 							$emailnotificationcontent = str_replace("{username}", $username, $emailnotificationcontent);
 							$emailnotificationcontent = str_replace("{password}", $pass1, $emailnotificationcontent);
 							$emailnotificationcontent = str_replace("{email}", $email, $emailnotificationcontent);
+							if ( $emailvalidation ) {
+								$emailnotificationcontent = str_replace("{activateurl}", sprintf('<br><br><strong><a href="%s">%s</a></strong><br>', $url_msg, __('Click here to activate your account', 'clean-login')), $emailnotificationcontent);
+								$subject = __('Welcome to Voters in Training! Activate your Voters in training account', 'clean-login');
+							}
+							$emailnotificationcontent = nl2br($emailnotificationcontent);
 							
 							add_filter( 'wp_mail_content_type', 'clean_login_set_html_content_type' );
 							if( !wp_mail( $email, $subject , $emailnotificationcontent ) )
