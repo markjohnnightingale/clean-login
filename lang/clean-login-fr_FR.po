@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Clean Login\n"
-"POT-Creation-Date: 2018-06-13 11:48+0200\n"
-"PO-Revision-Date: 2018-06-13 11:50+0200\n"
+"POT-Creation-Date: 2019-03-26 12:37+0100\n"
+"PO-Revision-Date: 2019-03-26 12:39+0100\n"
 "Last-Translator: Mark Nightingale <hello@marknightingale.net>\n"
 "Language-Team: codection <contacto@codection.com>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -29,11 +29,18 @@ msgstr "Déconnexion réussie avec succès !"
 
 #: ../clean-login.php:48
 msgid "Something went wrong while activating your user"
-msgstr ""
+msgstr "Quelque chose a mal tourné durant l'activation de votre utilisateur"
 
 #: ../clean-login.php:50
-msgid "Your account is currently disabled"
+msgid ""
+"You haven't validated your email address. Check your email inbox from a mail "
+"from Electeurs en Herbe.<br><strong>Click on the link in the email to "
+"activate your account.</strong> and try logging in again."
 msgstr ""
+"Vous n'avez pas validé votre adresse e-mail. Consultez votre boîte de "
+"réception pour un mail  d’Electeurs en herbe<br><strong>Cliquez sur le lien "
+"dans l'e-mail pour activer votre compte.</strong> et essayez de vous "
+"connecter à nouveau."
 
 #: ../clean-login.php:52
 msgid "Successfully activated"
@@ -43,7 +50,7 @@ msgstr "Votre compte est désormais vérifié"
 msgid "Information updated"
 msgstr "Informations mises à jour"
 
-#: ../clean-login.php:82 ../clean-login.php:127 ../clean-login.php:1007
+#: ../clean-login.php:82 ../clean-login.php:128 ../clean-login.php:1028
 msgid ""
 "Passwords must be eight characters including one upper/lowercase letter, one "
 "special/symbol character and alphanumeric characters. Passwords should not "
@@ -70,77 +77,89 @@ msgstr "Une erreur est survenue"
 msgid "You need to be logged in to edit your profile"
 msgstr "Vous devez être connecté pour modifier votre profil"
 
-#: ../clean-login.php:121 ../clean-login.php:123
+#: ../clean-login.php:122 ../clean-login.php:124
 msgid "User created"
 msgstr "Utilisateur créé"
 
-#: ../clean-login.php:123
+#: ../clean-login.php:124
 msgid "Please confirm your account, you will receive an email"
 msgstr ""
 "Un email avec un lien d'activation pour vérifier votre compte vous a été "
 "envoyé"
 
-#: ../clean-login.php:125
+#: ../clean-login.php:126
 msgid "New user created"
 msgstr "Nouvel utilisateur créé"
 
-#: ../clean-login.php:129 ../clean-login.php:178
-msgid "Username is not valid"
-msgstr "Identifiant non valide"
+#: ../clean-login.php:130
+msgid "Username is not valid. Do you already have an account?"
+msgstr "Le nom d'utilisateur n'est pas valide. Avez-vous déjà un compte?"
 
-#: ../clean-login.php:131
-#, fuzzy
+#: ../clean-login.php:132
 msgid "First name is not valid"
 msgstr "Identifiant non valide"
 
-#: ../clean-login.php:133
-#, fuzzy
+#: ../clean-login.php:134
 msgid "Last name is not valid"
 msgstr "Identifiant non valide"
 
-#: ../clean-login.php:135
+#: ../clean-login.php:136
 msgid "Passwords must be identical and filled"
 msgstr "Les mots de passe doivent être tous les deux saisis et identiques"
 
-#: ../clean-login.php:137
+#: ../clean-login.php:138
 msgid "Email is not valid"
 msgstr "L’email est invalide"
 
-#: ../clean-login.php:139
+#: ../clean-login.php:140
+msgid ""
+"There is already a user registered with this email. Login with this existing "
+"account. If you do not remember your password, you will find a recuperation "
+"link at the login form."
+msgstr ""
+"Il y a déjà un utilisateur enregistré avec cette adresse mail. Connectez-"
+"vous avec ce compte existant. Si vous ne vous souvenez pas de votre mot de "
+"passe, vous trouverez un lien de récupération sur le formulaire de connexion."
+
+#: ../clean-login.php:142
 msgid "CAPTCHA is not valid, please try again"
 msgstr "Le CAPTCHA est invalide, merci d'essayer à nouveau"
 
-#: ../clean-login.php:141
+#: ../clean-login.php:144
 msgid "Something strange has ocurred while created the new user"
 msgstr "Une erreur est survenue lors de la création du nouvel utilisateur"
 
-#: ../clean-login.php:143
+#: ../clean-login.php:146
 msgid "must be checked"
 msgstr ""
 
-#: ../clean-login.php:149
+#: ../clean-login.php:152
 msgid "You are now logged in. It makes no sense to register a new user"
 msgstr "Vous êtes déjà connecté : Vous ne pouvez pas vous inscire."
 
-#: ../clean-login.php:172
+#: ../clean-login.php:175
 msgid "You will receive an email with the activation link"
 msgstr "Vous recevrez un émail avec le lien d'activation"
 
-#: ../clean-login.php:174
+#: ../clean-login.php:177
 msgid "You may receive an email with the activation link"
 msgstr "Vous allez recevoir un email avec le lien d'activation"
 
-#: ../clean-login.php:176
+#: ../clean-login.php:179
 msgid "An error has ocurred sending the email"
 msgstr "Une erreur s'est produite lors de l'envoi de l’email"
 
-#: ../clean-login.php:187
+#: ../clean-login.php:181
+msgid "Username is not valid"
+msgstr "Identifiant non valide"
+
+#: ../clean-login.php:190
 msgid "You are now logged in. It makes no sense to restore your account"
 msgstr ""
 "Vous êtes déjà connecté : Il n'y a pas lieu de réinitialiser votre mot de "
 "passe."
 
-#: ../clean-login.php:465
+#: ../clean-login.php:476
 #, php-format
 msgid ""
 "Use the following link to activate your account: <a href='%s'>activate your "
@@ -149,11 +168,11 @@ msgstr ""
 "Utiliser le lien suivant pour vérifier votre compte: <a href='%s'>vérifier "
 "votre compte</a> <br/>%s<br/>"
 
-#: ../clean-login.php:467
+#: ../clean-login.php:479
 msgid "Activate your account"
-msgstr ""
+msgstr "Activer votre compte"
 
-#: ../clean-login.php:494
+#: ../clean-login.php:507
 #, php-format
 msgid ""
 "New user registered: %s <br/><br/>Please change the role from 'Stand By' to "
@@ -162,17 +181,25 @@ msgstr ""
 "Nouvel utilisateur inscrit : %s <br/><br/>Merci de changer le rôle de 'Stand-"
 "by' à 'abonné' ou supérieur pour permettre l'accès complet au site "
 
-#: ../clean-login.php:496
+#: ../clean-login.php:509
 #, php-format
 msgid "New user registered: %s <br/>"
 msgstr "Nouvel utilisateur inscrit : %s <br/>"
 
-#: ../clean-login.php:498
-#, fuzzy
+#: ../clean-login.php:511
 msgid "New user"
 msgstr "Nouvel utilisateur créé"
 
-#: ../clean-login.php:582
+#: ../clean-login.php:522
+msgid "Click here to activate your account"
+msgstr "Cliquez ici pour activer votre compte"
+
+#: ../clean-login.php:523
+msgid "Welcome to Voters in Training! Activate your Voters in training account"
+msgstr ""
+"Bienvenue à Electeurs en Herbe ! Activez votre compte Électeurs en Herbe"
+
+#: ../clean-login.php:602
 #, php-format
 msgid ""
 "Use the following link to restore your password: <a href='%s'>restore your "
@@ -181,28 +208,27 @@ msgstr ""
 "Utilisez le lien ci-dessous pour réinitialiser votre mot de passe : <a "
 "href='%s'>réinitialiser votre mot de passe</a> <br/>%s<br/>"
 
-#: ../clean-login.php:584
+#: ../clean-login.php:604
 msgid "Restore your password"
 msgstr "Nouveau mot de passe"
 
-#: ../clean-login.php:770
+#: ../clean-login.php:791
 msgid "Donate"
-msgstr ""
+msgstr "DOn"
 
-#: ../clean-login.php:799
+#: ../clean-login.php:820
 msgid "Admin area"
 msgstr "Zone d'administration"
 
-#: ../clean-login.php:812
+#: ../clean-login.php:833
 msgid "Do you like it?"
 msgstr ""
 
-#: ../clean-login.php:827
-#, fuzzy
+#: ../clean-login.php:848
 msgid "Clean Login status"
 msgstr "Statut de l'utilisateur connecté"
 
-#: ../clean-login.php:829
+#: ../clean-login.php:850
 msgid ""
 "Below you can check the plugin status regarding the shortcodes usage and the "
 "pages/posts which contain  it."
@@ -210,24 +236,24 @@ msgstr ""
 "Ci-dessous vous pouvez vérifier l'état du plugin en ce qui concerne "
 "l'utilisation des shortcodes et des pages / articles qui les contiennent"
 
-#: ../clean-login.php:837 ../clean-login.php:846 ../clean-login.php:855
-#: ../clean-login.php:864
+#: ../clean-login.php:858 ../clean-login.php:867 ../clean-login.php:876
+#: ../clean-login.php:885
 msgid "Currently not used"
 msgstr "Actuellement non utilisé"
 
-#: ../clean-login.php:839 ../clean-login.php:848 ../clean-login.php:857
-#: ../clean-login.php:866
+#: ../clean-login.php:860 ../clean-login.php:869 ../clean-login.php:878
+#: ../clean-login.php:887
 #, php-format
 msgid "Used <a href=\"%s\">here</a>"
 msgstr "Utilisé <a href=\"%s\">ici</a>"
 
-#: ../clean-login.php:841
+#: ../clean-login.php:862
 msgid "This shortcode contains login form and login information."
 msgstr ""
 "Ce shortcode affiche le formulaire de connexion et les informations de "
 "connexion"
 
-#: ../clean-login.php:850
+#: ../clean-login.php:871
 msgid ""
 "This shortcode contains the profile editor. If you include in a page/post a "
 "link will appear on your login preview."
@@ -235,7 +261,7 @@ msgstr ""
 "Ce shortcode affiche l'éditeur de profil</br>Si vous l'incluez dans une "
 "page / un article, un lien apparaîtra sur votre formulaire de connexion"
 
-#: ../clean-login.php:859
+#: ../clean-login.php:880
 msgid ""
 "This shortcode contains the register form. If you include in a page/post a "
 "link will appear on your login form."
@@ -243,7 +269,7 @@ msgstr ""
 "Ce shortcode affiche le formulaire d'inscription</br>Si vous l'incluez dans "
 "une page / un article, un lien apparaîtra sur votre formulaire de connexion"
 
-#: ../clean-login.php:868
+#: ../clean-login.php:889
 msgid ""
 "This shortcode contains the restore (lost password?) form. If you include in "
 "a page/post a link will appear on your login form."
@@ -252,34 +278,34 @@ msgstr ""
 "br>Si vous l'incluez dans une page / un article, un lien apparaîtra sur "
 "votre formulaire de connexion"
 
-#: ../clean-login.php:873
+#: ../clean-login.php:894
 msgid "Options"
 msgstr ""
 
-#: ../clean-login.php:911
+#: ../clean-login.php:932
 msgid "Settings saved."
 msgstr "Paramètres enregistrés"
 
-#: ../clean-login.php:947
+#: ../clean-login.php:968
 msgid "Admin bar"
 msgstr "Barre d'administration"
 
-#: ../clean-login.php:949
+#: ../clean-login.php:970
 msgid "Hide admin bar for non-admin users?"
 msgstr ""
 "Masquer la barre d'administration pour les utilisateurs non-administrateurs ?"
 
-#: ../clean-login.php:953
+#: ../clean-login.php:974
 msgid "Dashboard access"
 msgstr "Accès au Tableau de bord"
 
-#: ../clean-login.php:955
+#: ../clean-login.php:976
 msgid "Disable dashboard access for non-admin users?"
 msgstr ""
 "Désactiver l'accès au Tableau de bord pour les utilisateurs non-"
 "administrateurs ?"
 
-#: ../clean-login.php:956
+#: ../clean-login.php:977
 msgid ""
 "Please note that you can only log in through <strong>wp-login.php</strong> "
 "and this plugin. <strong>wp-admin</strong> permalink will be inaccessible."
@@ -288,19 +314,19 @@ msgstr ""
 "php </strong> et ce plugin</br>Le lien <strong>wp-admin</strong> sera "
 "inaccessible"
 
-#: ../clean-login.php:960 ../clean-login.php:968
+#: ../clean-login.php:981 ../clean-login.php:989
 msgid "Antispam protection"
 msgstr "Protection antispam"
 
-#: ../clean-login.php:962
+#: ../clean-login.php:983
 msgid "Enable captcha?"
 msgstr "Activer le CAPTCHA ?"
 
-#: ../clean-login.php:963
+#: ../clean-login.php:984
 msgid "Honeypot antispam detection is enabled by default."
 msgstr "La détection antispam Honeypot est activée par défaut"
 
-#: ../clean-login.php:964
+#: ../clean-login.php:985
 msgid ""
 "For captcha usage the PHP-GD library needs to be enabled in your server/"
 "hosting."
@@ -308,32 +334,31 @@ msgstr ""
 "Pour utiliser les CAPTCHA, la bibliothèque PHP-GD doit être activée sur "
 "votre serveur /  chez votre hébergeur"
 
-#: ../clean-login.php:970
+#: ../clean-login.php:991
 msgid "Enable Google reCaptcha?"
 msgstr ""
 
-#: ../clean-login.php:971
+#: ../clean-login.php:992
 msgid "Google reCaptcha site key and secret key must not be empty"
 msgstr ""
 
-#: ../clean-login.php:973
+#: ../clean-login.php:994
 msgid "Google reCaptcha Site Key"
 msgstr ""
 
-#: ../clean-login.php:977
+#: ../clean-login.php:998
 msgid "Google reCaptcha Secret Key"
 msgstr ""
 
-#: ../clean-login.php:983
-#, fuzzy
+#: ../clean-login.php:1004
 msgid "User role"
 msgstr "Utilisateur mis en rôle Standby (attente)"
 
-#: ../clean-login.php:985
+#: ../clean-login.php:1006
 msgid "Enable Standby role?"
 msgstr "Activer le rôle Standby (attente) ?"
 
-#: ../clean-login.php:986
+#: ../clean-login.php:1007
 msgid ""
 "Standby role disables all the capabilities for new users, until the "
 "administrator changes. It usefull for site with restricted components."
@@ -342,11 +367,11 @@ msgstr ""
 "nouveaux utilisateurs, jusqu'à ce qu'un administrateur le change</br>C'est "
 "utile pour les sites avec des accès restreints."
 
-#: ../clean-login.php:988
+#: ../clean-login.php:1009
 msgid "Choose the role(s) in the registration form?"
 msgstr ""
 
-#: ../clean-login.php:989
+#: ../clean-login.php:1010
 msgid ""
 "This feature allows you to choose the role from the frontend, with the "
 "selected roles you want to show. You can also define an standard predefined "
@@ -355,161 +380,157 @@ msgid ""
 "accept to avoid security/infiltration issues."
 msgstr ""
 
-#: ../clean-login.php:997
+#: ../clean-login.php:1018
 msgid "Hide username"
 msgstr "Cacher l'identifiant"
 
-#: ../clean-login.php:999
+#: ../clean-login.php:1020
 msgid "Hide username?"
 msgstr "Cacher l'identifiant ?"
 
-#: ../clean-login.php:1000
+#: ../clean-login.php:1021
 msgid "Hide username from the preview form."
 msgstr "Cacher l'identifiant sur les formulaires"
 
-#: ../clean-login.php:1004
+#: ../clean-login.php:1025
 msgid "Password complexity"
 msgstr "Mots de passe complexes"
 
-#: ../clean-login.php:1006
+#: ../clean-login.php:1027
 msgid "Enable password complexity?"
 msgstr "Activer les mots de passe complexes"
 
-#: ../clean-login.php:1011
-#, fuzzy
+#: ../clean-login.php:1032
 msgid "Email notification"
 msgstr "L’email est invalide"
 
-#: ../clean-login.php:1013
+#: ../clean-login.php:1034
 msgid "Enable email notification for new registered users?"
 msgstr ""
 
-#: ../clean-login.php:1014
+#: ../clean-login.php:1035
 msgid "Please use HMTL tags for all formatting. And also you can use:"
 msgstr ""
 
-#: ../clean-login.php:1018
+#: ../clean-login.php:1039
 msgid "Terms and conditions"
 msgstr ""
 
-#: ../clean-login.php:1020
+#: ../clean-login.php:1041
 msgid "Accept terms / conditions in the registration form?"
 msgstr ""
 
-#: ../clean-login.php:1021
+#: ../clean-login.php:1042
 msgid "Terms and conditions message"
 msgstr ""
 
-#: ../clean-login.php:1022
+#: ../clean-login.php:1043
 msgid "Target URL"
 msgstr ""
 
-#: ../clean-login.php:1026
+#: ../clean-login.php:1047
 msgid "Use Email as Username"
 msgstr ""
 
-#: ../clean-login.php:1028
+#: ../clean-login.php:1049
 msgid ""
 "Allow user to use email as username? If you want to use both, WP Email Login "
 "plugin will help you"
 msgstr ""
 
-#: ../clean-login.php:1032
-#, fuzzy
+#: ../clean-login.php:1053
 msgid "Single Password"
 msgstr "Changer le mot de passe"
 
-#: ../clean-login.php:1034
+#: ../clean-login.php:1055
 msgid "Only ask for password once on registration form?"
 msgstr ""
 
-#: ../clean-login.php:1038
-#, fuzzy
+#: ../clean-login.php:1059
 msgid "Registration"
 msgstr "Inscription"
 
-#: ../clean-login.php:1040
+#: ../clean-login.php:1061
 msgid "Automatically Login after registration?"
 msgstr ""
 
-#: ../clean-login.php:1042
+#: ../clean-login.php:1063
 msgid "URL after registration (if blank then homepage)"
 msgstr ""
 
-#: ../clean-login.php:1046
+#: ../clean-login.php:1067
 msgid "Add name and surname?"
 msgstr ""
 
-#: ../clean-login.php:1048
+#: ../clean-login.php:1069
 msgid "Validate user registration through an email?"
 msgstr ""
 
-#: ../clean-login.php:1049
+#: ../clean-login.php:1070
 msgid "This feature cannot be used with the automatic login after registration"
 msgstr ""
 
-#: ../clean-login.php:1053
+#: ../clean-login.php:1074
 msgid "Redirections"
 msgstr ""
 
-#: ../clean-login.php:1055
+#: ../clean-login.php:1076
 msgid "Redirect after log in?"
 msgstr ""
 
-#: ../clean-login.php:1057
+#: ../clean-login.php:1078
 msgid "URL after login (if blank then homepage)"
 msgstr ""
 
-#: ../clean-login.php:1061
+#: ../clean-login.php:1082
 msgid "Redirect after log out?"
 msgstr ""
 
-#: ../clean-login.php:1063
+#: ../clean-login.php:1084
 msgid "URL after logout (if blank then homepage)"
 msgstr ""
 
-#: ../clean-login.php:1073
+#: ../clean-login.php:1094
 msgid "Save Changes"
 msgstr "Enregistrer les modifications"
 
-#: ../clean-login.php:1240
+#: ../clean-login.php:1261
 msgid "Use this widget to show the user login status and Clean Login links."
 msgstr ""
 "Utilisez ce widget pour afficher l'état de connexion de l'utilisateur et les "
 "liens vers Clean Login"
 
-#: ../clean-login.php:1270 ../content/login-preview.php:15
+#: ../clean-login.php:1291 ../content/login-preview.php:15
 msgid "Edit my profile"
 msgstr "Modifier mon profil"
 
-#: ../clean-login.php:1273
+#: ../clean-login.php:1294
 msgid "Logout"
 msgstr ""
 
-#: ../clean-login.php:1279 ../content/login-form.php:22
+#: ../clean-login.php:1300 ../content/login-form.php:22
 #: ../content/restore-new.php:21
 msgid "Log in"
 msgstr "Connexion"
 
-#: ../clean-login.php:1280 ../content/login-form.php:41
+#: ../clean-login.php:1301 ../content/login-form.php:41
 #: ../content/register-form.php:91
 msgid "Register"
 msgstr "Inscription"
 
-#: ../clean-login.php:1281 ../content/login-form.php:37
+#: ../clean-login.php:1302 ../content/login-form.php:37
 msgid "Lost password?"
 msgstr "Mot de passe perdu ?"
 
-#: ../clean-login.php:1294
+#: ../clean-login.php:1315
 msgid "User login status"
 msgstr "Statut de l'utilisateur connecté"
 
-#: ../clean-login.php:1298
+#: ../clean-login.php:1319
 msgid "Title:"
 msgstr "Titre :"
 
-#: ../clean-login.php:1324
-#, fuzzy
+#: ../clean-login.php:1345
 msgid "Settings"
 msgstr "Paramètres enregistrés"
 
